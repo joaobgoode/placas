@@ -1,5 +1,7 @@
 Trabalho de Matematica para Computação envolvendo placas de trânsito do padrão mercosul, não destinado para fins comerciais ou uso publico, obviamente. Esta foi minha primeira vez usando Rust;
+O objetivo foi validar placas inseridas pelo usuario, pesquisar de qual estado pertence a placa e contar quantas placas validas possiveis em um estado especifico, selecionato pelo usuario;
 Muito espaço em branco para facilitar leitura em classe;
 
 College task on Computer Math, envolving Mercosul pattern license plates, not intended for commercial or public use obviously. That's my first time using Rust;
+The goal was to validade license plates, search the state that the plate belongs and count the number of possible valid plates in a state;
 Tons of whitespace to make it easier to read in class;
