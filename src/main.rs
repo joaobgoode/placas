@@ -3,12 +3,11 @@ mod importacao;
 mod pesquisa;
 mod validacao;
 pub use crate::validacao::validacao::completa;
-use colored::*;
 
 fn desenho() {
 
     println!(
-        "{}",
+        "\x1b[0;34m{}\x1b[0m",
         " 
     #####################################################################
     #   #####   ###### #     #    #    ####### ######     #    #     #  #
@@ -28,7 +27,6 @@ fn desenho() {
     #  #     #  ###### #     #  #####   #####   #####   #####   ######  # 
     #####################################################################
     "
-        .blue()
     );
     
 }
@@ -50,7 +48,7 @@ fn valida() -> Result<bool, std::io::Error> {
     Ok(false)
 }
 
-fn placaestado<ColoredString>() -> Result<String, std::io::Error> {
+fn placaestado() -> Result<String, std::io::Error> {
 
     println!("Digite a placa:");
 
@@ -98,11 +96,11 @@ fn main() {
 
                     if res {
 
-                        println!("{}", "Placa válida".green());
+                        println!("\x1b[0;32m{}\x1b[0m", "Placa válida");
 
                     } else {
                         
-                        println!("{}", "Placa inválida".red());
+                        println!("\x1b[0;31m{}\x1b[0m", "Placa inválida");
 
                     }
 
@@ -111,17 +109,17 @@ fn main() {
                 Err(_) => println!("Erro ao validar placa"),
 
             },
-            "2" => match placaestado::<ColoredString>() {
+            "2" => match placaestado() {
                 
                 Ok(res) => {
                     
                     if res == "Placa inválida" {
                         
-                        println!("{}", res.red());
+                        println!("\x1b[0;31mPlaca Invalida\x1b[0m");
                     
                     } else {
                         
-                        println!("{}", res.green());
+                        println!("\x1b[0;32m{}\x1b[0m", res);
 
                     }
 
