@@ -2,7 +2,6 @@ pub mod pesquisa {
 
     pub use crate::contagem::contagem;
     pub use crate::importacao::get;
-    use colored::*;
 
     pub fn estado(placainserida: &str) -> &str {
 
@@ -13,7 +12,7 @@ pub mod pesquisa {
         
         if selecionado.is_none() {
 
-            return "Placa não encontrada";
+            return "\x1b[0;34mPlaca não encontrada\x1b[0m";
         
         }
 
@@ -35,7 +34,7 @@ pub mod pesquisa {
         
         if !ESTADOS.contains(&estado) {
 
-            println!("Estado não encontrado.");
+            println!("\x1b[0;33mEstado não encontrado.\x1b[0m");
 
             return;
         
@@ -56,7 +55,7 @@ pub mod pesquisa {
         }).sum();
 
         println!("Total de letras:\t{}", sum);
-        println!("Total de placas:\t{}", (sum * 10000).to_string().green());
+        println!("Total de placas:\t\x1b[0;32m{}\x1b[0m", (sum * 10000));
 
     }
 
